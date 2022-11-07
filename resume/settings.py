@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'resume.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'deve0kpr2a21sj',
+        'USER': 'avvavyrffigeys',
+        'PASSWORD': '8b472a9c0d4bca02a1625381f6451c9d4a121d74be96ab8997a9ef099df190e4',
+        'HOST': 'ec2-3-219-135-162.compute-1.amazonaws.com',
+        'PORT': '5432', 
     }
 }
 
@@ -123,7 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
+django_heroku.settings(locals())
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 # Default primary key field type

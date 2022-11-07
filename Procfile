@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn resume.wgsi --log-file -
+web: gunicorn resume.wsgi --log-file -

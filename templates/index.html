@@ -1,0 +1,252 @@
+{% load static %}
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK 58</title>
+   <!-- <link rel="stylesheet" href="style.css">  -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+ </head>
+ 
+ <body>
+
+
+   <div id="menu-bars" class="fas fa-bars"></div>
+
+    <header>
+
+         <a href="#" class="logo"><span>Mohan</span> Kumar</a>
+
+         <nav class="navbar">
+         <a href="#home">Home</a>
+         <a href="#About">About</a>
+         <a href="#skills">Skills</a>
+         <a href="#Educations">Educations</a>
+         <a href="#Portfolio">Portfolio</a>
+         <a href="#Contact">Contact</a>
+         {% if user.is_authenticated %}
+         <a class="nav-link" href="/admin">Add project</a>
+         {% else %}
+         <a class="nav-link" href="/admin">Admin Login</a>
+         {% endif %}
+         </nav>
+
+         <div class="follow">
+         <a href="https://www.facebook.com/profile.php?id=100021784206779" class="fab fa-facebook-f"></a>
+         <a href="https://www.instagram.com/i_am_mk58/" class="fab fa-instagram"></a>
+         <a href="https://www.linkedin.com/in/mohan-kumar-81575a211/" class="fab fa-linkedin"></a>
+         <a href="#" class="fab fa-github"></a>
+         </div>
+
+   </header>
+
+
+    <section class="home" id="home">
+
+      <div class="content">
+         <span class="hi">Hi There..!</span>
+      <h3>i am <span> mohan kumar </span></h3>
+      <p class="info"> i am a <span class="typing"> Web developer </span> </p>
+      <p class="text"> I'm glad you're here! Check out my official Porfolio Website. <br> I am ready start my journey as a Web Developer.</p>
+      <a href="#About"><button class="btn">about me <i class="fas fa-user"></i></button></a>
+   </div>
+
+   <div class="image">
+      <img src="{% static 'avatar.jpg' %}">
+   </div>
+
+   </section>
+
+   <section class="about" id="About">
+
+      <h1 class="heading2"><span> about </span> me </h1>
+
+   <div class="content1">
+      <span class="text"> <span class="py">I am </span> a Mechanical engineer turned web designer. I have a keen intrest for web designing
+          and love to create Web Pages I like to keep things really
+          simple & creative. My goals are to focus on typography, content, user research and conveying the message.
+          Lets keep it crisp and clear.I'm also a <span class="py">developer </span>. So I know how to code and create your website using the 
+          latest technologies available.</span>
+   </div>      
+
+      <div class="row">
+
+         <div class="info1">
+            <h3><span> name :</span> mohan kumar </h3>
+            <h3><span> age :</span> 23 </h3>
+            <h3><span> qualification :</span> BE-Mechanical Engineering</h3>
+            <h3><span> post :</span> mohan kumar</h3>
+            <h3><span> Phone :</span> +916383801926  </h3>
+            <h3><span> Email :</span> mohankumarmk058@gmail.com  </h3>
+            <h3><span> language :</span> English, Tamil, Telegu </h3>
+            <h3><span>  Country :</span> India  </h3> 
+            <a href= "{% static 'resume_pdf.pdf' %}"><button class="btn"> download CV <i class="fas fa-download"></i></button></a>&nbsp;&nbsp;
+            <a href="#Contact" ><button class="btn"> Hire ME </button></a>
+         </div>  
+
+         <div class="try">
+
+         <div class="icons">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p> 42, Albert Victor Royan Circle,<br> Chamarajpete, Banglore-560018. </p>
+         </div>
+      </div>
+
+      </div>
+
+      <h1 class="heading" id="skills"> my <span> skills </span></h1>
+
+
+      <h2>I am a quick learner and specialize in multitude of skills required for Web Application
+          Development and AI model Development.</h2><br>
+
+      <div class="row1">
+
+         <div class="skills">
+         {% for skill in skills %}
+         <div class="progress">
+            <h3> {{ skill.subject }} <span>{{ skill.percent }}%</span></h3>
+            {% comment %} <progress id="file" value="{{skill.percent}}" max="100"> 32% </progress> {% endcomment %}
+            <div class="bar"><span></span></div>
+         </div>
+         {% endfor %}
+
+         
+
+
+      </div>
+
+      <div class="box-container">
+
+          <div class="box">
+            <h3>  >> Python </h3>
+            <p> solid understanding of python consepts like OOPS & Data Structures,etc..</p>
+          </div>
+          <div class="box">
+            <h3>  >> SQL </h3>
+            <p>good knowledge of DDL,DML,TCL & RDBMS,Joins,etc..</p>
+          </div>
+          <div class="box">
+            <h3>  >> Html & CSS</h3>
+            <p>good knowledge about web page creations</p>
+          </div>
+          <div class="box">
+            <h3>  >> JavaScript </h3>
+            <p>good understanding of Java Script consepts</p>
+          </div>
+
+      </div>
+   </div>
+
+   </section>
+
+
+   <section class="education" id="Educations">
+
+      <h1 class="heading2"><span> mY </span> Education</h1>
+
+      <div class="box-container">
+
+         <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2022</span>
+            <h1>web developer</h1>
+            <p>I completed my web development in J-Spiders Banglore. </p>
+         </div>
+         <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2021</span>
+            <h1>Mechanical Engineer - 67.8%</h1>
+            <h2 style="color: #111 ;">Al-Ameen Engineering Collge</h2> <p> I am a Mechanical engineer turned web designer. </p>
+         </div>
+         <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2016</span>
+            <h1>12th Grade - 72.1%</h1>
+            <p>i have completed my school educations in VLP School. </p>
+         </div>
+         <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2014</span>
+            <h1>10th Grade - 89.9%</h1>
+            <p>i have completed my school educations in VLP School. </p>
+         </div>
+
+      </div>
+
+   </section>
+
+   <section class="portfolio" id="Portfolio">
+
+        <h1 class="heading"> my <span> Portfolio </span></h1>
+
+        <div class="box-container">
+
+         {% for object in objects %}
+         <div class="box">
+            <img src="{{ object.project_image.url }}" alt="">
+            <h3>{{object.title}}</h3>
+            <div class="icons">
+               <a href="{{ object.git_link }}" class="fab fa-github"></a>
+               <a href="{{ object.git_link }}" class="fas fa-share"></a>
+            </div>
+         </div>
+         {% endfor %}
+
+        </div>
+
+   </section>
+
+
+   <section class="contact" id="Contact">
+
+   <h1 class="heading2"><span> Contact </span> me </h1>
+
+   <div class="row">
+
+       <div class="content">
+
+         <h3 class="title">contact info</h3>
+
+         <div class="info">
+            <h3> <i class="fas fa-envelope"></i> mohankumarmk058@gmail.com</h3>
+            <h3> <i class="fas fa-phone"></i> +91-6383801926</h3>
+            <h3> <i class="fas fa-map-marker-alt"></i>Banglore, india-560018</h3>
+         </div>
+
+       </div>
+
+       <form action="" method='POST'>
+         {% csrf_token %}
+         <input type="text" placeholder=" Name" name = 'name' class="box" required>
+         <input type="text" placeholder=" Email" name='email' class="box" required>
+         <textarea id="" name='msg' cols="30" rows="10" placeholder=" Message" class="box message"></textarea>
+         <button class="btn" type="submit"> Send <i class="fas fa-paper-plane"></i> </button>
+       </form>
+
+   </div>
+
+   </section>
+
+   <div class="copyright">
+      <p class='created'>Creared by Mohankumar &nbsp;&nbsp;<i class="fas fa-heart"></i> &nbsp;&nbsp;
+      <i><a href="https://www.facebook.com/profile.php?id=100021784206779" class="fab fa-facebook-f"> &nbsp;&nbsp;</i></a>
+      <i class="face" ><a href="https://www.instagram.com/i_am_mk58/" class="fab fa-instagram"></a></i></p>
+  </div>
+
+
+<script src="{% static script.js %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</body>
+
+</html>

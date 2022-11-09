@@ -71,22 +71,20 @@
       <span class="text"> <span class="py">I am </span> a Mechanical engineer turned web designer. I have a keen intrest for web designing
           and love to create Web Pages I like to keep things really
           simple & creative. My goals are to focus on typography, content, user research and conveying the message.
-          Lets keep it crisp and clear.I'm also a <span class="py">developer </span>. So I know how to code and create your website using the 
-          latest technologies available.</span>
+          Lets keep it crisp and clear.I'm also a <span class="py">developer </span>.</span>
    </div>      
 
       <div class="row">
 
          <div class="info1">
-            <h3><span> name :</span> mohan kumar </h3>
-            <h3><span> age :</span> 23 </h3>
-            <h3><span> qualification :</span> BE-Mechanical Engineering</h3>
-            <h3><span> post :</span> mohan kumar</h3>
+            <h3><span> Name :</span> mohan kumar </h3>
+            <h3><span> Age :</span> 23 </h3>
+            <h3><span> Qualification :</span> BE-Mechanical Engineering</h3>
             <h3><span> Phone :</span> +916383801926  </h3>
             <h3><span> Email :</span> mohankumarmk058@gmail.com  </h3>
-            <h3><span> language :</span> English, Tamil, Telegu </h3>
+            <h3><span> language :</span> English, Tamil, Telugu </h3>
             <h3><span>  Country :</span> India  </h3> 
-            <a href= "{% static 'resume_pdf.pdf' %}"><button class="btn"> download CV <i class="fas fa-download"></i></button></a>&nbsp;&nbsp;
+            <a href= "{% static 'MK58.pdf' %}"><button class="btn"> download CV <i class="fas fa-download"></i></button></a>&nbsp;&nbsp;
             <a href="#Contact" ><button class="btn"> Hire ME </button></a>
          </div>  
 
@@ -240,6 +238,22 @@
       <i><a href="https://www.facebook.com/profile.php?id=100021784206779" class="fab fa-facebook-f"> &nbsp;&nbsp;</i></a>
       <i class="face" ><a href="https://www.instagram.com/i_am_mk58/" class="fab fa-instagram"></a></i></p>
   </div>
+
+
+<script>
+   let menu = document.querySelector('#menu-bars');
+   let header = document.querySelector('header');
+
+   menu.onclick =() =>{
+      menu.classList.toggle('fa-times');
+      header.classList.toggle('active');
+   }
+
+   window.onscroll =() =>{
+      menu.classList.remove('fa-times');
+      header.classList.remove('active');
+   }
+</script>
 
 
 <script src="{% static script.js %}"></script>
